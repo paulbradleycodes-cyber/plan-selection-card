@@ -7,10 +7,6 @@ const SelectPlanButton = (): JSX.Element | null => {
   const plan = useContext(PlanContext);
   const [isProcessing, setIsProcessing] = useState(false);
   
-  if (!plan) {
-    return null;
-  }
-  
   const { name } = plan;
 
   const handleSelect = useCallback(async () => {
@@ -25,10 +21,14 @@ const SelectPlanButton = (): JSX.Element | null => {
   }, [name]);
 
   const handleEnter = useCallback((e: React.KeyboardEvent<HTMLButtonElement>) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       handleSelect();
     }
   }, [handleSelect]);
+
+  if (!plan) {
+    return null;
+  }
   
   return (
     <Button

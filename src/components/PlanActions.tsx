@@ -17,11 +17,11 @@ const PlanActions = (): JSX.Element | null => {
         <SelectPlanButton />
       </CardActions>
 
-      <Typography 
-        variant="caption" 
+      <Typography
+        variant="caption"
         color="text.secondary"
         id="plan-selection-description"
-        sx={{ 
+        sx={{
           textAlign: "center",
           display: "block",
           px: { xs: 3, sm: 4 },
